@@ -4,8 +4,6 @@
 
 Tutorial by DappUniversity: https://github.com/dappuniversity/dappazon/tree/master
 
-YouTube: https://www.youtube.com/watch?v=jcgfQEbptdo
-
 - Solidity (Writing Smart Contracts & Tests)
 - Javascript (React & Testing)
 - [Hardhat](https://hardhat.org/) (Development Framework)
