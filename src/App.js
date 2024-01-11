@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react'
 import { ethers } from 'ethers'
+import { useEffect, useState } from 'react'
 
 // Components
 import Navigation from './components/Navigation'
-import Section from './components/Section'
 import Product from './components/Product'
+import Section from './components/Section'
 
 // ABIs
 import Dappazon from './abis/Dappazon.json'
@@ -22,8 +22,12 @@ function App() {
   const [clothing, setClothing] = useState(null)
   const [toys, setToys] = useState(null)
 
-  const togglePop = () => {
-    console.log("togglePop...")
+  const [item, setItem] = useState({})
+  const [toggle, setToggle] = useState(false)
+
+  const togglePop = (item) => {
+    setItem(item)
+    toggle ? setToggle(false) : setToggle(true)
   }
 
   const loadBlockChainData = async() => {
@@ -72,6 +76,10 @@ function App() {
           <Section title={"Electronics & Gadgets"} items={electronics} togglePop={togglePop} />
           <Section title={"Toys & Gaming"} items={toys} togglePop={togglePop} />
         </>
+      )}
+
+      {toggle && (
+        <Product item={item} provider={provider} account={account} dappazon={dappazon} togglePop={togglePop} />
       )}
 
     </div>
