@@ -43,6 +43,7 @@ function App() {
       Dappazon, 
       provider
     )
+    setDappazon(dappazon)
 
     // Load products
     const items = []
