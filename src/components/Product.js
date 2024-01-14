@@ -25,7 +25,7 @@ const Product = ({ item, provider, account, dappazon, togglePop }) => {
   const buyHandler = async () => {
     const signer = await provider.getSigner()
 
-    let transaction = dappazon.connect(signer).buy(item.id, { value: item.cost })
+    let transaction = await dappazon.connect(signer).buy(item.id, { value: item.cost })
     await transaction.wait()
 
     setHasBought(true)
